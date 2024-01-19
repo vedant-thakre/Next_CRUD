@@ -34,7 +34,6 @@ export async function GET(req) {
 export async function DELETE(req) {
     const id = req.nextUrl.searchParams.get("id");
     await connectDB();
-
     try {
         const task = await Task.findById(id);
 
