@@ -36,7 +36,6 @@ export async function DELETE(req) {
     await connectDB();
     try {
         const task = await Task.findById(id);
-
         if (!task) {
             return NextResponse.json({
                     status: false,
