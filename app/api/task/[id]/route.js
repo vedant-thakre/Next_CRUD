@@ -24,3 +24,19 @@ export async function PUT(req , { params }) {
     { status: 201 }
   );
 }
+
+// get single topic by ID
+export async function GET(req, { params }) {
+  const { id } = params;
+  await connectDB();
+  const task = await Task.findById(id);
+  console.log(task);
+  return NextResponse.json(
+    {
+      status: true,
+      messaage: "Tasks Found",
+      data: task,
+    },
+    { status: 201 }
+  );
+}
