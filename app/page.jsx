@@ -22,7 +22,7 @@ const page = () => {
 
   return (
       data.map((task, i) => (
-        <TopicsList key = {i} tit = {task.title} desc = {task.description} />
+        <TopicsList key = {i} id= { task._id} tit = {task.title} desc = {task.description} />
       ))
   )
 }

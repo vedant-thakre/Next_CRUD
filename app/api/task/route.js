@@ -3,20 +3,34 @@ import Task from "@/models/taskModel";
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
-    const { title, description } = await req.json();
-    await connectDB();
-    const task = await Task.create({
-        title,
-        description,
-    })
-    console.log(task);
-    return NextResponse.json({ 
-        status: true,
-        messaage: "Tasks Fetched successfully",
-        data: task, 
-    },
-    { status: 201 },
-    );
+    try {
+        const { title, description } = await req.json();
+        console.log(title, description);
+        await connectDB();
+        const task = await Task.create({
+          title,
+          description,
+        });
+        console.log(task);
+        return NextResponse.json(
+          {
+            status: true,
+            messaage: "Tasks Fetched successfully",
+            data: task,
+          },
+          { status: 201 }
+        );
+    } catch (error) {
+        console.error("Error adding task:", error);
+        return NextResponse.json(
+          {
+            status: false,
+            message: "Error adding task",
+            error: error.message,
+          },
+          { status: 500 }
+        );
+    }
 }
 
 export async function GET(req) {
