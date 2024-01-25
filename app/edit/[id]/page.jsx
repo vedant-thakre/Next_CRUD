@@ -1,9 +1,10 @@
 import EditTask from '@/components/EditTask'
 import React from 'react'
 
-const page = () => {
+const page = ( { params } ) => {
+  const  { id } = params;
   return (
-    <EditTask/>
+    <EditTask id = {id}/>
   )
 }
 
