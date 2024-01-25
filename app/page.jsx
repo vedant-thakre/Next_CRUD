@@ -18,7 +18,7 @@ const page = () => {
 
   useEffect(() => {
     getData();
-  }, [])
+  }, [data])
 
   return (
       data.map((task, i) => (

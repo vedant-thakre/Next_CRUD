@@ -12,7 +12,6 @@ const EditTask = ( { id }) => {
   const getDetails = async () => {
     try {
       const res = await axios.get(`http://localhost:3000/api/task/${id}`);
-      console.log(res)
       setTitle(res.data.data.title);
       setDescription(res.data.data.description);
     } catch (error) {

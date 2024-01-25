@@ -5,13 +5,11 @@ import { NextResponse } from "next/server";
 export async function POST(req) {
     try {
         const { title, description } = await req.json();
-        console.log(title, description);
         await connectDB();
         const task = await Task.create({
           title,
           description,
         });
-        console.log(task);
         return NextResponse.json(
           {
             status: true,

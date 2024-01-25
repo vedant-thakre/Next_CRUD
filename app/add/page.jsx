@@ -17,7 +17,6 @@ const Page = () => {
     }
     try {
       // Make a POST request to your API endpoint
-      console.log("Request Payload:", { title, description });
       const res = await axios.post("http://localhost:3000/api/task", {
           title,
           description,
@@ -28,7 +27,6 @@ const Page = () => {
       });
 
       // Log the response and navigate to the home page on success
-      console.log(res.data);
       router.push("/");
     } catch (error) {
       // Handle errors and log them
