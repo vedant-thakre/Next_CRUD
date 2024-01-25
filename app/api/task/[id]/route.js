@@ -14,7 +14,6 @@ export async function PUT(req , { params }) {
         description:description,
     }
   );
-  console.log(updatedTask);
   return NextResponse.json(
     {
       status: true,
