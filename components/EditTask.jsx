@@ -11,7 +11,7 @@ const EditTask = ( { id }) => {
 
   const getDetails = async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/api/task/${id}`);
+      const res = await axios.get(`https://next-crud-bjir.vercel.app/api/task/${id}`);
       setTitle(res.data.data.title);
       setDescription(res.data.data.description);
     } catch (error) {
@@ -22,7 +22,7 @@ const EditTask = ( { id }) => {
   const updateDetails = async(e) => {
         e.preventDefault();
     try {
-      const res = await axios.put(`http://localhost:3000/api/task/${id}`,{
+      const res = await axios.put(`https://next-crud-bjir.vercel.app/api/task/${id}`,{
           title,
           description,
         }, {

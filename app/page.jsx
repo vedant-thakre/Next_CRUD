@@ -8,7 +8,7 @@ const Page = () => {
 
   const getData = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/task");
+      const res = await axios.get("https://next-crud-bjir.vercel.app/api/task");
       const obj = res.data;
       setData(obj.data);
     } catch (error) {

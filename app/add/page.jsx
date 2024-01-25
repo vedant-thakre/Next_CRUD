@@ -17,7 +17,7 @@ const Page = () => {
     }
     try {
       // Make a POST request to your API endpoint
-      const res = await axios.post("http://localhost:3000/api/task", {
+      const res = await axios.post("https://next-crud-bjir.vercel.app/api/task", {
           title,
           description,
         }, {

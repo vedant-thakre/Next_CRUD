@@ -7,7 +7,7 @@ const RemoveBtn = ( { id }) => {
   const router = useRouter();
   const handleclick = async () => {
     try {
-      const res = await axios.delete(`http://localhost:3000/api/task?id=${id}`);
+      const res = await axios.delete(`https://next-crud-bjir.vercel.app/api/task?id=${id}`);
 
       if(res.data.status == true){
           router.refresh();
